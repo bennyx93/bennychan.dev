@@ -23,6 +23,22 @@ export const PageHead: React.FC<types.PageProps> = ({ site }) => {
 
       <meta name='theme-color' content='#3d5a80' />
       <meta property='og:type' content='website' />
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=G-D0S0ZYJD28`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D0S0ZYJD28', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
     </Head>
   )
 }
